@@ -10,4 +10,3 @@ http://localhost:8081/mvcmybatis03/product/add
 
 5.此项目包含：商品单价 + VO + DTO + 正则校验数据
 
-6. 项目仅供参考
