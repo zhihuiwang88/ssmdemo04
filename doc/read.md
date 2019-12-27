@@ -1,7 +1,7 @@
 
 1.访问URL：http://localhost:8081/mvcmybatis03/person/list
 
-2.shangpin:
+2.商品:
 http://localhost:8081/mvcmybatis03/product/add
 
 3.此项目是：Spring + springmvc + mybatis
