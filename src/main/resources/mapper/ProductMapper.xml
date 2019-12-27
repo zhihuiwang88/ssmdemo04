@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nengliang.web.dao.ProductMapper">
+
+	<resultMap type="com.nengliang.web.entity.Product" id="productResultMap">
+		<result property="id" column="id" />
+		<result property="productName" column="product_name" />
+		<result property="productAmount" column="product_amount" />
+		<result property="productStatus" column="product_status" />
+		<result property="productPrice" column="product_price" />
+
+	</resultMap>
+
+		<select id="findList" parameterType="com.nengliang.web.entity.Product"
+			resultMap="productResultMap">
+			select
+			id,product_name,product_amount,product_status,product_price from
+			product
+			ORDER BY id desc
+		</select>
+
+
+	<insert id="save" parameterType="com.nengliang.web.entity.Product">
+		insert into
+		product(product_name,product_amount,product_status,product_price)
+		values(#{productName},#{productAmount},#{productStatus},#{productPrice})
+	</insert>
+
+	<update id="updateByOne" parameterType="com.nengliang.web.entity.Product">
+		update product set
+		product_name=#{productName},product_amount=#{productAmount},product_status=#{productStatus},
+		product_price=#{productPrice} where id=#{id}
+	</update>
+
+	<delete id="deleteById" parameterType="com.nengliang.web.entity.Product">
+		delete from product where
+		id=#{id}
+	</delete>
+
+	<select id="findByName" resultType="java.lang.String">
+		select product_name from product where product_name=#{productName}
+	</select>
+
+	<select id="findById" parameterType="java.lang.Integer"
+		resultType="com.nengliang.web.entity.Product">
+		select id from product where id=#{id}
+	</select>
+
+
+
+</mapper>
+
+
